@@ -4,7 +4,7 @@
 # Get a list of all delete markers for the specified prefix and date range
 aws s3api list-object-versions \
     --bucket wordpress-protected-s3-assets-prod-assets \
-    --prefix original_media/www.bu.edu/files/ \
+    --prefix original_media/www.bu.edu/ \
     --query "DeleteMarkers[?starts_with(LastModified, '2025-06-02') || starts_with(LastModified, '2025-06-03')]" \
     --output json > delete-markers.json
 
